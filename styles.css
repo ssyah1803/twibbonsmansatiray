@@ -1,0 +1,197 @@
+body {
+    background-color: #000029; /* Latar belakang biru tua */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow-y: auto;
+}
+
+.container {
+    text-align: center;
+    width: 90%;
+    max-width: 600px;
+}
+
+.frame {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 20px; /* Tambahkan beberapa ruang di bawah frame */
+    width: 100%;
+    max-width: 512px;
+    height: auto;
+}
+
+.frame1-img {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.controls, .text-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.custom-file-upload {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 16px;
+    background-color: rgb(63, 63, 63);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    margin: 10px 0;
+}
+
+.custom-file-upload:hover {
+    background-color: gold;
+    transform: scale(1.05);
+}
+
+.custom-file-upload:active {
+    transform: scale(1);
+}
+
+.custom-file-upload input {
+    display: none;
+}
+
+#file-name {
+    margin: 10px 0;
+    font-size: 14px;
+    color: white;
+    word-wrap: break-word;
+    max-width: 90%;
+}
+
+button {
+    display: block;
+    margin: 10px 0;
+    padding: 15px 30px;
+    font-size: 16px;
+    background-color: rgb(65, 65, 60);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background-color: gold;
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(1);
+}
+
+canvas {
+    width: 100%;
+    max-width: 512px;
+    height: auto;
+    border: 1px solid #6d1f1f;
+}
+
+.text-controls input {
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 14px;
+    width: 80%;
+    max-width: 300px;
+}
+
+.template-text {
+    position: relative;
+    margin: 20px 0;
+    padding: 15px;
+    background-color: rgba(63, 63, 63, 0.6); /* Warna latar belakang dengan transparansi */
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+    text-align: left;
+    width: 100%;
+    overflow: hidden; /* Memastikan pseudo-element tidak meluas */
+}
+
+.template-text::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('background.jpg'); /* Gambar latar belakang yang ingin diblur */
+    background-size: cover;
+    filter: blur(10%); /* Efek blur di sini */
+    z-index: -1; /* Memastikan efek blur berada di belakang teks */
+}
+
+/* Existing CSS */
+
+/* Gaya untuk kotak input */
+.text-input {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #1b1b1b;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.text-input:focus {
+    border-color: #4CAF50; /* Color on focus */
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+}
+
+/* Gaya untuk notifikasi sukses */
+.notification {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4CAF50; /* Green background for success */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    font-size: 16px;
+    z-index: 1000;
+    transition: opacity 0.5s;
+}
+
+/* Gaya untuk notifikasi spam */
+.spam-notification {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #f44336; /* Red background for spam warning */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    font-size: 16px;
+    z-index: 1000;
+    transition: opacity 0.5s;
+}
+
+/* Gaya untuk catatan */
+.note {
+    font-size: 14px;
+    font-style: italic;
+    color: #777; /* Light gray color for less prominent text */
+    margin-top: 20px;
+    max-width: 800px;
+    text-align: center;
+}
